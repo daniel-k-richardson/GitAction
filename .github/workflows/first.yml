@@ -9,34 +9,5 @@ jobs:
     steps:
       - name: Step one
         uses: actions/checkout@v2
-      - name: Step two
-        run: echo $(date)
-
-  windows-job:
-    name: Windows job
-    runs-on: windows-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: Get-Date 
-
-  mac-job: 
-    name: Mac job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: echo $(date)
-
-
-  final-job: 
-    name: Final job
-    runs-on: ubuntu-latest
-    needs: [ubuntu-job, windows-job, mac-job]
-    steps:
-      - name: Step one
-        uses: actions/checkout@v2
-      - name: Step two
-        run: echo $(date)
+      - name: json-lint
+        uses: ocular-d/json-linter@0.0.2
