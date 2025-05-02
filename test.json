@@ -1,5 +1,5 @@
 {
-	name:"Test",
-	age: 1,
-	Des: "home"
+	"name":"Test",
+	"age": 1,
+	"Des": "home"
 }
