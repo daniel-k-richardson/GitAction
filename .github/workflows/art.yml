@@ -3,7 +3,7 @@ name: artifact test
 on:
   push:
     branches:
-
+jobs:
   env:
     ARTIFACT_NAME: hello-world
   steps:
