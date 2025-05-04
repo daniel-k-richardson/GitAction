@@ -18,6 +18,6 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@2
         with:
-          - name: ${{ env.ARTIFACT_NAME }} 
+            name: ${{ env.ARTIFACT_NAME}} 
             path: hello.txt
     
