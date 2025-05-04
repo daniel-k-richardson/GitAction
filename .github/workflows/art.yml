@@ -1,0 +1,24 @@
+name: artifact test
+
+on:
+  push:
+    braches:
+
+  build:
+    runs-on: ubuntu-latest
+
+  env:
+    ARTIFACT_NAME: hello-world
+  steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    -name: Create file with echo
+     run: echo "Hello world" > hello.txt
+
+    - name: upload artifact
+      uses: actions/upload-artifact@1.0.0
+      with:
+        - name: ${{ env.ARTIFACT_NAME }} 
+          path: hello.txt
+
