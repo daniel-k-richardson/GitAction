@@ -2,8 +2,6 @@ name: artifact test
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   build:
