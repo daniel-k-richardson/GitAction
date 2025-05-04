@@ -7,7 +7,6 @@ env:
   
 jobs:
   main:
-  - name: test
     runs-on: ubuntu-latest
     
   steps:
