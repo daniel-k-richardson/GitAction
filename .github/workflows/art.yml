@@ -1,20 +1,21 @@
 name: artifact test
 
-on: [push]
+on:
+  push:
 
 env:
   ARTIFACT_NAME: artifact-test
-  
+
 jobs:
   main:
     runs-on: ubuntu-latest
     
-  steps:
-    - name: Checkout the code
-      uses: actions/checkout@v2
-      
-    - name: upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{ env.ARTIFACT_NAME }}
-        path: .
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
