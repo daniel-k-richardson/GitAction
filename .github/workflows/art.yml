@@ -1,22 +1,22 @@
 name: artifact test
 
-on:
-  push:
+on: [push]
 
+env:
+  ARTIFACT_NAME: artifact-test
+  
 jobs:
-  build:
+  main:
+  - name: test
     runs-on: ubuntu-latest
-    env:
-      ARTIFACT_NAME: hello-world
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: Create file with echo
-        run: echo "Hello world" > hello.txt
-
-      - name: upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: hello.txt
+    
+  steps:
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.ARTIFACT_NAME }}
+        path: .
