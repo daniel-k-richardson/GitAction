@@ -2,6 +2,8 @@ name: artifact test
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -11,13 +13,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-  
+
       - name: Create file with echo
         run: echo "Hello world" > hello.txt
-  
+
       - name: upload artifact
-        uses: actions/upload-artifact@1.0.0
+        uses: actions/upload-artifact@v2
         with:
-            name: ${{ env.ARTIFACT_NAME}} 
-            path: hello.txt
-    
+          name: ${{ env.ARTIFACT_NAME }}
+          path: hello.txt
